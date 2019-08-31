@@ -16,6 +16,10 @@ jobs:
       id: yasm_ubuntu
       if: matrix.os == 'ubuntu-18.04'
       run: yes | sudo apt install yasm
+    - name: install yasm macos
+      id: yasm_ubuntu
+      if: matrix.os == 'macOS-10.14'
+      run: brew install yasm
     - name: configure
       run: ./configure
     - name: make
