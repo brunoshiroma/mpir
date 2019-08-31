@@ -15,8 +15,7 @@ jobs:
     - name: install yasm ubuntu
       id: yasm_ubuntu
       if: matrix.os == 'ubuntu-18.04'
-      run: |
-      yes | sudo apt install yasm
+      run: yes | sudo apt install yasm
     - name: configure
       run: ./configure
     - name: make
