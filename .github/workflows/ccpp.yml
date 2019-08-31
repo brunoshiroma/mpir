@@ -12,6 +12,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: install yasm ubuntu
+      id: yasm_ubuntu
+      if: matrix.os == "ubuntu-18.04"
+      run: yes | apt-get install yasm
     - name: configure
       run: ./configure
     - name: make
